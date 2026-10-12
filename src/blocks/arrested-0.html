@@ -1,0 +1,65 @@
+<script>window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};</script><body style='margin: 0'><div id="arrest-system-marquee" style="background: #000; border-top: 2px solid #d4af37; border-bottom: 2px solid #d4af37; padding: 15px 0; overflow: hidden; box-shadow: 0 0 60px rgba(212, 175, 55, 0.2); position: relative; display: flex; align-items: center;">
+  
+  <style>
+    /* THE INFINITE LOOP ANIMATION */
+    @keyframes marquee-infinite {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @keyframes signal-glow-cyan {
+      0% { opacity: 1; filter: drop-shadow(0 0 2px #00ffff); }
+      50% { opacity: 0.4; filter: drop-shadow(0 0 10px #00ffff); }
+      100% { opacity: 1; filter: drop-shadow(0 0 2px #00ffff); }
+    }
+
+    .marquee-wrapper {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee-infinite 40s linear infinite;
+    }
+
+    .marquee-text {
+      color: #d4af37;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+    }
+
+    .marquee-divider {
+      margin: 0 40px;
+      color: #00ffff;
+      animation: signal-glow-cyan 1.5s infinite;
+    }
+  </style>
+
+  <div class="marquee-wrapper">
+    <!-- FIRST SET -->
+    <div class="marquee-text">
+      <span class="marquee-divider">///</span> SYSTEM ALERT: ARREST-RECORDS LLC OFFICIALLY ACTIVE 
+      <span class="marquee-divider">📂</span> DATA LOGGED: 'GHOSTWRITER' 4K ODYSSEY LIVE 
+      <span class="marquee-divider">⚖️</span> STATUS: 100% CLEAN. 100% HARD. 
+      <span class="marquee-divider">🔊</span> FREQUENCY: 2.37K RESISTANCE MEMBERS DETECTED 
+      <span class="marquee-divider">⚡</span> SYSTEM OVERRIDE: ACT III 'THE LIGHT' IN PROGRESS 
+      <span class="marquee-divider">💿</span> NEW ALBUM: 'ARRESTED' COMING 1Q 2027 
+      <span class="marquee-divider">🏛️</span> HQ: SOUTH FLORIDA 
+      <span class="marquee-divider">🧬</span> THE SCHOLAR & THE SHADOW SYNC COMPLETE
+    </div>
+
+    <!-- DUPLICATE SET (REQUIRED FOR SEAMLESS LOOP) -->
+    <div class="marquee-text">
+      <span class="marquee-divider">///</span> SYSTEM ALERT: ARREST-RECORDS LLC OFFICIALLY ACTIVE 
+      <span class="marquee-divider">📂</span> DATA LOGGED: 'GHOSTWRITER' 4K ODYSSEY LIVE 
+      <span class="marquee-divider">⚖️</span> STATUS: 100% CLEAN. 100% HARD. 
+      <span class="marquee-divider">🔊</span> FREQUENCY: 2.37K RESISTANCE MEMBERS DETECTED 
+      <span class="marquee-divider">⚡</span> SYSTEM OVERRIDE: ACT III 'THE LIGHT' IN PROGRESS 
+      <span class="marquee-divider">💿</span> NEW ALBUM: 'ARRESTED' COMING 1Q 2027 
+      <span class="marquee-divider">🏛️</span> HQ: SOUTH FLORIDA 
+      <span class="marquee-divider">🧬</span> THE SCHOLAR & THE SHADOW SYNC COMPLETE
+    </div>
+  </div>
+</div></body>
