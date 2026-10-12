@@ -38,7 +38,7 @@ DIMS={"banner-case-files.jpg": [1600, 873], "banner-public-records.jpg": [1600, 
 ALTS={'case-files':'Arrest Records access-granted ID card glowing against digital code, Case Files banner',
       'the-art':'Nicholas Elia as a neon-lit cyberpunk figure in a city skyline, The Art banner',
       'public-records-1':'Ancient stone tablets and glowing holographic scrolls, Public Records banner'}
-SAMEAS=['https://www.youtube.com/@ArrestRecords','https://open.spotify.com/artist/7iNOGW9wT6PSKnPOhkGwwY','https://music.amazon.com/artists/B001XGL392/nicholas-elia']
+SAMEAS=['https://www.youtube.com/@ArrestRecords','https://open.spotify.com/artist/7iNOGW9wT6PSKnPOhkGwwY','https://music.amazon.com/artists/B001XGL392/nicholas-elia','https://nicholaselia.bandcamp.com','https://soundcloud.com/nicholaselia']
 PERSON={'@type':'Person','@id':SITE+'/#nicholas-elia','name':'Nicholas Elia','url':SITE+'/',
   'jobTitle':'Recording artist, director and producer',
   'description':'Nicholas Elia is a hip-hop and electronic recording artist, director and producer based in South Florida, founder of Arrest Records.',
