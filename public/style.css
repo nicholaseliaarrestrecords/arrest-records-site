@@ -28,3 +28,5 @@ body{margin:0;background:#fff;color:#1b1b1b;font-family:'Source Sans Pro',Helvet
 .about p{line-height:1.7;font-size:1.05rem;margin:0 0 14px}
 .about a{color:#0b7a75}
 .nav nav{display:block}
+.intro .kicker{font-size:.9rem;letter-spacing:2px;text-transform:uppercase;color:#555;margin:0 0 14px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;scroll-behavior:auto!important}}
