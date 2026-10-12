@@ -1,0 +1,154 @@
+<script>window.onmessage = function(event) {event.source.postMessage({iframeId: event.data, scrollHeight: document.body.getBoundingClientRect().height || document.body.scrollHeight}, event.origin);};</script><body style='margin: 0'><div id="arrest-public-records-terminal" class="arrest-block-uniform">
+  <style>
+    .arrest-block-uniform { 
+      max-width: 950px; 
+      margin: 0 auto 50px auto; 
+      background-color: #000000 !important; 
+      border: 2px solid #d4af37 !important; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+      box-shadow: 0 0 60px rgba(212, 175, 55, 0.3); 
+      box-sizing: border-box !important; 
+      display: block !important; 
+    }
+    .arrest-block-uniform * { box-sizing: border-box !important; }
+    
+    .u-header { 
+      background-color: #111111 !important; 
+      padding: 40px 15px; 
+      text-align: center; 
+      border-bottom: 2px solid #222222; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      gap: 15px; 
+    }
+    .u-header h1 { color: #ffffff !important; margin: 0 !important; text-transform: uppercase !important; letter-spacing: 6px !important; font-size: 2.2rem !important; line-height: 1.2; }
+    .u-label { color: #00ffff !important; font-family: 'Courier New', monospace; font-size: 14px !important; letter-spacing: 4px !important; margin: 0 !important; font-weight: bold !important; text-transform: uppercase !important; }
+
+    .t-body { 
+      padding: 45px 35px; 
+      background-color: #000000 !important; 
+      word-wrap: break-word !important; 
+      overflow-wrap: break-word !important;
+    }
+    .quote-accent { background-color: #080808 !important; border-left: 4px solid #fb245a !important; padding: 30px; margin-bottom: 50px; border-radius: 0 10px 10px 0; }
+    
+    /* Responsive Grid Fix */
+    .metrics-grid { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 40px; 
+      align-items: flex-start;
+    }
+    .content-col { 
+      flex: 1.5; 
+      min-width: 250px; 
+    }
+    .metrics-card { 
+      flex: 1; 
+      min-width: 250px; 
+      background-color: #080808 !important; 
+      padding: 30px; 
+      border-radius: 12px !important; 
+      border: 1px solid #222222 !important; 
+    }
+    
+    .sub-section-title { color: #d4af37 !important; text-transform: uppercase !important; letter-spacing: 2px !important; font-size: 1.2rem !important; border-bottom: 1px solid #222222 !important; padding-bottom: 10px !important; margin-bottom: 20px !important; }
+    .btn-gold-action { display: flex !important; align-items: center; justify-content: center; background-color: #d4af37 !important; color: #000000 !important; padding: 15px !important; text-decoration: none !important; border-radius: 6px !important; font-weight: bold !important; text-align: center !important; font-size: 12px !important; letter-spacing: 2px; text-transform: uppercase; margin-top: 20px; }
+
+    /* PYRAMID FOOTER STYLES */
+    .u-footer { 
+      background-color: #111111 !important; 
+      padding: 40px 15px !important; 
+      text-align: center !important; 
+      border-top: 1px solid #d4af37 !important; 
+    }
+    .f-line-1 { 
+      color: #d4af37 !important; 
+      font-size: 14px !important; 
+      margin: 0 auto 10px auto !important; 
+      letter-spacing: 1px !important; /* Shortest */
+      font-weight: bold !important; 
+      text-transform: uppercase !important; 
+      display: block !important;
+      width: fit-content;
+    }
+    .f-line-2 { 
+      color: #ffffff !important; 
+      font-size: 12px !important; 
+      letter-spacing: 3px !important; /* Middle */
+      margin: 0 auto 10px auto !important; 
+      text-transform: uppercase !important; 
+      font-weight: bold !important; 
+      display: block !important;
+      width: fit-content;
+    }
+    .f-line-3 { 
+      color: #ffffff !important; 
+      font-size: 10px !important; 
+      letter-spacing: 7px !important; /* Longest */
+      margin: 0 auto !important; 
+      text-transform: uppercase !important; 
+      font-weight: bold !important; 
+      opacity: 0.7 !important; 
+      display: block !important;
+      width: fit-content;
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media (max-width: 600px) {
+      .arrest-block-uniform { border-radius: 0 !important; border-left: none !important; border-right: none !important; }
+      .u-header h1 { font-size: 1.6rem !important; }
+      .u-label { font-size: 11px !important; letter-spacing: 2px !important; }
+      .t-body { padding: 30px 20px !important; }
+      .quote-accent { padding: 20px; }
+      .quote-accent p { font-size: 1.1rem !important; }
+      .metrics-grid { gap: 30px; }
+      .content-col, .metrics-card { min-width: 100% !important; }
+    }
+  </style>
+
+  <div class="u-header">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00ffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px #00ffff);"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+    <p class="u-label">ARREST RECORDS CENTRAL INTELLIGENCE</p>
+    <h1>Public Records</h1>
+  </div>
+
+  <div class="t-body">
+    <!-- THE QUOTE -->
+    <div class="quote-accent">
+      <p style="font-style: italic !important; font-size: 1.25rem !important; color: #eeeeee !important; margin: 0 !important; line-height: 1.6 !important;">"It’s refreshing to see an established Dad absolutely crushing a trap-hybrid sound instead of playing it safe... proving that you don’t have to be a teenager to have a heavy 808-drive."</p>
+      <p style="color: #fb245a !important; font-weight: bold !important; text-transform: uppercase !important; letter-spacing: 3px !important; margin-top: 15px !important; font-size: 11px;">— Media Intelligence Dispatch</p>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="content-col">
+        <h2 class="sub-section-title">The Artist</h2>
+        <p style="font-size: 1.05rem !important; color: #ffffff !important; margin-bottom: 35px !important; line-height: 1.7;">Directed and Produced by <strong>Nicholas Elia</strong>, Arrest Records is the "Trojan Horse" of the digital age. Operating from the Dad Cave in South Florida, Elia merges technical mastery with raw spiritual survival.</p>
+        
+        <h2 class="sub-section-title">Sonic Profile</h2>
+        <p style="font-size: 1rem !important; color: #ffffff !important; line-height: 1.7;">Inspired by <strong>Rick Rubin</strong> and <strong>Timbaland</strong>. Blending the soulful textures of <strong>Rihanna</strong> and <strong>H.E.R.</strong> with the flows of <strong>Big Sean</strong> and <strong>Kanye West</strong>. Redemption sounds better at high velocity.</p>
+      </div>
+
+      <!-- METRICS BOX -->
+      <div class="metrics-card">
+        <h2 style="color: #00ffff !important; font-family: 'Courier New', monospace; text-transform: uppercase !important; letter-spacing: 3px !important; font-size: 1rem !important; margin: 0 0 25px 0 !important; text-align: center !important;">System Metrics</h2>
+        <div style="font-family: 'Courier New', Courier, monospace !important; font-size: 13px !important; margin-bottom: 10px; color: #ffffff !important;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px !important;"><span style="color: #999999 !important;">RECRUITS:</span><span>2.3K+</span></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px !important;"><span style="color: #999999 !important;">VISUALS:</span><span>4K / 0 CUTS</span></div>
+          <div style="display: flex; justify-content: space-between;"><span style="color: #999999 !important;">LOCALE:</span><span>S. FLORIDA</span></div>
+        </div>
+        <a href="mailto:NicholasEliaArrestRecords@gmail.com" class="btn-gold-action">INQUIRIES & BOOKING</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PYRAMID FOOTER -->
+  <div class="u-footer">
+    <span class="f-line-1">100% CLEAN, 100% HARD.</span>
+    <span class="f-line-2">The "Dad Cave" | SOUTH FLORIDA</span>
+    <span class="f-line-3">© 2026 ARREST-RECORDS LLC</span>
+  </div>
+</div></body>
