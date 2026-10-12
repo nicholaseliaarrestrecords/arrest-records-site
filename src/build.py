@@ -16,7 +16,7 @@ def frag(n):
 # slug -> (path, nav label, title, description)
 PAGES={
  'index':('/','MAINFRAME','Nicholas Elia | Arrest Records - Official Site, Music & Videos',
-   'Official site of Nicholas Elia and Arrest Records. 100% clean, 100% hard. Watch Static & Gold and preview the new album ARRESTED, coming 1st quarter 2027.'),
+   'Official site of hip-hop and electronic artist Nicholas Elia. Clean-lyric, radio-ready music. Watch Static & Gold; new album ARRESTED arrives 1st quarter 2027.'),
  'case-files':('/case-files','CASE FILES','Case Files | Nicholas Elia - Arrest Records',
    'The Case Files: the story, lyrics and lore behind every Static & Gold track by Nicholas Elia on Arrest Records.'),
  'the-art':('/the-art','THE ART','The Art | Nicholas Elia - Arrest Records',
@@ -37,13 +37,13 @@ PERSON={'@type':'Person','@id':SITE+'/#nicholas-elia','name':'Nicholas Elia','ur
   'jobTitle':'Recording artist, director and producer',
   'description':'Nicholas Elia is a hip-hop and electronic recording artist, director and producer based in South Florida, founder of Arrest Records.',
   'image':LOGO,'sameAs':SAMEAS,'worksFor':{'@id':SITE+'/#arrest-records'}}
-LABEL={'@type':['Organization','MusicGroup'],'@id':SITE+'/#arrest-records','name':'Arrest Records','url':SITE+'/','logo':LOGO,'sameAs':SAMEAS,'founder':{'@id':SITE+'/#nicholas-elia'}}
+LABEL={'@type':'Organization','@id':SITE+'/#arrest-records','name':'Arrest Records','url':SITE+'/','logo':{'@type':'ImageObject','url':LOGO},'description':'Independent hip-hop and electronic music label founded by Nicholas Elia.','sameAs':SAMEAS,'founder':{'@id':SITE+'/#nicholas-elia'}}
 def jsonld(slug):
     g=[PERSON,LABEL,{'@type':'WebSite','@id':SITE+'/#website','url':SITE+'/','name':'Arrest Records - Nicholas Elia','publisher':{'@id':SITE+'/#arrest-records'}}]
     path,label,title,desc=PAGES[slug]
     g.append({'@type':'WebPage','@id':SITE+path+'#webpage','url':SITE+path,'name':title,'description':desc,'isPartOf':{'@id':SITE+'/#website'},'about':{'@id':SITE+'/#nicholas-elia'}})
     if slug=='arrested':
-        g.append({'@type':'MusicAlbum','name':'ARRESTED','url':SITE+'/arrested','byArtist':{'@id':SITE+'/#nicholas-elia'},
+        g.append({'@type':'MusicAlbum','@id':SITE+'/arrested#album','albumReleaseType':'https://schema.org/AlbumRelease','inLanguage':'en','name':'ARRESTED','url':SITE+'/arrested','byArtist':{'@id':SITE+'/#nicholas-elia'},
           'recordLabel':{'@id':SITE+'/#arrest-records'},'genre':['Hip-Hop','Electronic'],
           'description':'ARRESTED is the new album by Nicholas Elia on Arrest Records, coming 1st quarter 2027.','image':COVER})
     if slug!='index':
@@ -80,7 +80,7 @@ def page(slug,hero,robots='index,follow,max-image-preview:large,max-snippet:-1',
 <main class="wrap">
 {inner}
 </main>
-<div id="cookie" class="cookie" hidden><h4>Signal Detected.</h4><p>Optimizing connection... We use cookies to analyze the data stream and improve the build. By accepting, your input is aggregated to help us cut through the noise.</p><div><button data-v="declined">Decline</button><button data-v="accepted">Accept</button></div></div>
+<div id="cookie" class="cookie" hidden role="region" aria-label="Privacy notice"><h4>Signal Detected.</h4><p>No tracking or advertising cookies here. This site loads fonts from Google Fonts and videos from YouTube, and only remembers that you closed this note.</p><div><button data-v="accepted">Got it</button></div></div>
 <script src="/site.js"></script>
 </body></html>'''
 
@@ -90,7 +90,7 @@ ABOUT='''<section class="about"><h2>About Nicholas Elia</h2>
 <p><strong>Nicholas Elia</strong> is a hip-hop and electronic recording artist, director and producer, and the founder of <strong>Arrest Records</strong>, an independent label based in South Florida. His music is 100% clean and 100% hard: radio-ready tracks with heavy 808 drive and a message of resilience, paired with cinematic 4K visuals he directs himself.</p>
 <p>His latest project, <em>Static &amp; Gold</em>, is streaming on <a href="https://open.spotify.com/artist/7iNOGW9wT6PSKnPOhkGwwY" target="_blank" rel="noopener">Spotify</a>, <a href="https://music.apple.com/us/album/static-gold/1867552961" target="_blank" rel="noopener">Apple Music</a> and <a href="https://music.amazon.com/artists/B001XGL392/nicholas-elia" target="_blank" rel="noopener">Amazon Music</a>, and the full visual odyssey is on <a href="https://www.youtube.com/@ArrestRecords" target="_blank" rel="noopener">YouTube</a>. His next album, <a href="/arrested"><strong>ARRESTED</strong></a>, arrives 1st quarter 2027. Learn more on <a href="/the-art">The Art</a> and in the <a href="/case-files">Case Files</a>, or reach out through <a href="/public-records-1">Public Records &amp; Booking</a>.</p></section>'''
 home=hero_logo+'''
-<section class="intro"><h1>Static &amp; Gold: Nicholas Elia</h1><p>100% Clean. 100% Hard. High-octane fuel for your workout, your commute, and your spirit.</p><p class="cta"><a href="/arrested">New album <strong>ARRESTED</strong> by Nicholas Elia - coming 1st quarter 2027 &rarr;</a></p></section>'''
+<section class="intro"><h1>Nicholas Elia: Official Site</h1><p class="kicker">Hip-hop and electronic music &middot; <em>Static &amp; Gold</em> &middot; Arrest Records</p><p>100% clean lyrics. 100% hard beats. High-octane fuel for your workout, your commute, and your spirit.</p><p class="cta"><a href="/arrested">New album <strong>ARRESTED</strong> by Nicholas Elia - coming 1st quarter 2027 &rarr;</a></p></section>'''
 def ban(slug):
     f,pos=BANNER[slug]; W,H=DIMS[f]
     return f'<section class="banner"><img src="/images/{f}" alt="{ALTS[slug]}" width="{W}" height="{H}" fetchpriority="high" style="object-position:{pos}"></section>'
@@ -106,5 +106,6 @@ open('404.html','w',encoding='utf8').write(page('404',None,robots='noindex,follo
 urls=''.join(f'<url><loc>{SITE}{PAGES[s][0]}</loc><lastmod>{LASTMOD}</lastmod></url>' for s in ORDER)
 open('sitemap.xml','w',encoding='utf8').write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
 open('robots.txt','w',encoding='utf8').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
-open('_redirects','w',encoding='utf8').write('/mainframe  /  301\n/mainframe.html  /  301\n/index.html  /  301\n')
+open('_redirects','w',encoding='utf8').write('/mainframe  /  301\n/mainframe.html  /  301\n/index.html  /  301!\n')
+open('_headers','w',encoding='utf8').write('/images/*\n  Cache-Control: public, max-age=31536000, immutable\n\n/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n')
 if os.path.exists('mainframe.html'): os.remove('mainframe.html')
