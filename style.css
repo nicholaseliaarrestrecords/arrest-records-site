@@ -1,0 +1,22 @@
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#1b1b1b;font-family:'Source Sans Pro',Helvetica,Arial,sans-serif}
+.nav{padding:28px 16px 18px}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 32px}
+.nav a{font-size:12px;letter-spacing:2.4px;font-weight:700;text-transform:uppercase;text-decoration:none;color:#555}
+.nav a:hover,.nav a.active{color:#0b7a75}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#1b1b1b;padding:40px 16px}
+.frame{background:#fff;max-width:520px;margin:0 auto;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.frame img{display:block;width:100%;height:auto}
+.banner{background:#1b1b1b;padding:40px 0}
+.banner img{display:block;width:100%;height:clamp(140px,22vw,230px);object-fit:cover}
+.intro{text-align:center;padding:36px 8px 28px}
+.intro h1{font-family:'Cinzel',serif;font-weight:400;color:#0b7a75;font-size:clamp(1.6rem,4vw,2.4rem);margin:0 0 14px}
+.intro p{max-width:560px;margin:0 auto;font-size:1.15rem;line-height:1.5}
+#arrest-system-marquee{margin:30px 0}
+.cookie{position:fixed;right:16px;bottom:16px;max-width:340px;background:#48d1cc;color:#06302e;padding:18px;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.3);z-index:50;font-size:13px;line-height:1.4}
+.cookie[hidden]{display:none}
+.cookie h4{margin:0 0 8px;letter-spacing:3px;text-transform:uppercase;font-size:12px}
+.cookie p{margin:0 0 14px}
+.cookie button{background:#000;color:#fff;border:0;border-radius:20px;padding:9px 18px;margin-right:8px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:700;cursor:pointer}
+@media(max-width:600px){.wrap{padding:0}.banner,.hero{padding:20px 0}.cookie{left:12px;right:12px;max-width:none}}
